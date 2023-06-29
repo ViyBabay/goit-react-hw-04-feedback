@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import s from './FeedbackOptions.module.css';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
@@ -7,6 +8,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       {options.map(option => {
         return (
           <button
+            className={s.btn}
             type="button"
             onClick={() => onLeaveFeedback(option)}
             key={option}
@@ -19,9 +21,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   );
 };
 
-
 FeedbackOptions.propTypes = {
-    options: PropTypes.arrayOf(
-    PropTypes.string).isRequired,
-    onLeaveFeedback: PropTypes.func.isRequired,
-}
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
